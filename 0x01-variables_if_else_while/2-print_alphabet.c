@@ -6,14 +6,14 @@
  */
 int main(void)
 {
-	char lower_case = 'a';
+	char c = 'a';
 
 	while
-		(lower_case <= 'z');
+		(c <= 'z');
 
 	{
-		putchar(lower_case);
-		lower_case++;
+		putchar(c);
+		c++;
 	}
 
 	putchar('\n');
