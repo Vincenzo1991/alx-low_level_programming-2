@@ -6,14 +6,13 @@
  */
 int main(void)
 {
-	char c;
+	char c[26] = "abcdefghijklmnopqrstuvwxyz";
+	int i;
 
-	for
-		(c = 'a'; c <= 'z'; c++);
+	for (i = 0; i < 26; i++)
 	{
-		putchar(c);
+		putchar(c[1]);
 	}
-
-	putchar ('\n');
+	putchar('\n');
 	return (0);
 }
