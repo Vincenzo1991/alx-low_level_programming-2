@@ -2,7 +2,7 @@
 /**
  * print_alphabet_x10 - prints 10 times the function
  *
- * Return: 0 (Success)
+ * Return: x10 a-z
  */
 
 void print_alphabet_x10(void)
@@ -17,6 +17,7 @@ void print_alphabet_x10(void)
 		{
 			_putchar(i);
 		}
+		i++;
+		_putchar(*"\n");
 	}
-	_putchar(*"\n");
 }
