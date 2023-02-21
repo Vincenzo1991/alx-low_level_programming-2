@@ -32,10 +32,10 @@ _putchar((result / 10) % 10 + '0');
 else if (result <= 99 && result >= 10)
 {
 _putchar((result / 10) + '0');
+}
 _putchar((result % 10) + '0');
 }
 _putchar('\n');
-}
 }
 }
 }
