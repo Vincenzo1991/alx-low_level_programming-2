@@ -1,33 +1,32 @@
 #include <stdio.h>
-#include "main.h"
 
 /**
- * main - fizz buzz tes
+ * main - fizz buzz test
  *
  * Return: 0 (Success)
  */
 
 int main(void)
 {
-	int num;
+	int count;
 
-	for (num = 1; num < 100; num++)
+	for (count = 1; count < 100; count++)
 	{
-		if ((num % 5 == 0) && (num % 3 == 0))
+		if ((count % 5 == 0) && (count % 3 == 0))
 		{
 			printf("Fizzbuzz ");
 		}
-		else if (num % 3 == 0)
+		else if (count % 3 == 0)
 		{
 			printf("Fizz ");
 		}
-		else if (num % 5 == 0)
+		else if (count % 5 == 0)
 		{
 			printf("Buzz ");
 		}
 		else
 		{
-			printf("%d ", num);
+			printf("%d ", count);
 		}
 	}
 	printf("Buzz\n");
