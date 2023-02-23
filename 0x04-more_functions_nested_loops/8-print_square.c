@@ -6,7 +6,7 @@
  * Return: 0 (Success)
  */
 
-void print_sqaure(int size)
+void print_square(int size)
 {
 	int i, j;
 
