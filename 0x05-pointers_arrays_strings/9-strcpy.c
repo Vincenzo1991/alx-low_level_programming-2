@@ -6,18 +6,19 @@
  * @src: the source string
  * @dest: the string destination
  *
- * Return: the pointer to dest
+ * Return: the pointer to @dest
  */
 
 char *_strcpy(char *dest, char *src)
 {
-	int i = 0;
+	char *start = dest;
 
-	while (src[i])
+	while (*src != '\0')
 	{
-		dest[i] = src[i];
-		i++;
+		*dest = *src;
+		dest++;
+		src++;
 	}
-
-	return (dest);
+	*dest = '\0';
+	return (start);
 }
