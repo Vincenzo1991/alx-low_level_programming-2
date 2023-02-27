@@ -3,51 +3,46 @@
 #include <time.h>
 
 /**
- * main - generates random passwprds for a program
+ * main - generates random passwOrds for a program
  *
  * Return: 0 (Success)
  */
 int main(void)
 {
-	char password[84];
-	int i = 0, sum = 0, diff_half1, diff_half2;
+	int counter, sum, random;
 
-	srand(time(0));
+	sum = 0;
+	counter = 0;
+	random = 0;
+
+	char password[80];
+
+	srand(time(NULL));
 
 	while (sum < 2772)
 	{
-		password[i] = 33 + rand() % 94;
-		sum += password[i];
-	}
-
-	password[i] = '\0';
-
-	if (sum != 2772)
+		if (2772 - sum < 48)
 	{
-		diff_half1 = (sum - 2772) / 2;
-		diff_half2 = (sum - 2773) / 2;
-		if ((sum - 2772) % 2 != 0)
-			diff_half1++;
-
-		for (i = 0; password[i]; i++)
+		sum -= password[--counter];
+	}
+		else if (2772 - sum <= 126)
 		{
-			if (password[i] >= (33 + diff_half1))
-			{
-				password[i] -= diff_half1;
-				break;
-			}
+			random = 2772 - sum;
 		}
-		for (i = 0; password[i]; i++)
+		else
 		{
-			if (password[i] >= (33 + diff_half2))
-			{
-				password[1] -= diff_half2;
-				break;
-			}
+			random = rand() % (126 - 48) + 48;
 		}
+		if (random)
+		{
+			password[counter++] = random;
+			sum += random;
+		}
+		random = 0;
 	}
 
-	printf("%s", password);
+	password[counter] = '\0';
+	printf("%s\n", password);
 
 	return (0);
 }
