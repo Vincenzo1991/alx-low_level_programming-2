@@ -5,7 +5,7 @@
  * @idx: index of the list where the new node should be added
  * @n: the integer of the new node
  * @head: the first node
- * Return: NULL, if cannot add new node
+ * Return: NULL, if cannot add a new node
  */
 
 listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
