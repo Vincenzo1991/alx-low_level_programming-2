@@ -9,17 +9,17 @@
 
 int pop_listint(listint_t **head)
 {
-	listint_t *tmp;
+	listint_t *temp_mem;
 	int rtn;
 
 	if (*head == NULL)
 		return (0);
 
-	tmp = *head;
+	temp_mem = *head;
 	rtn = (*head)->n;
 	*head = (*head)->next;
 
-	free(tmp);
+	free(temp_mem);
 
 	return (rtn);
 }
