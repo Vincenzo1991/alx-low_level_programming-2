@@ -11,23 +11,23 @@
 
 unsigned int binary_to_uint(const char *b)
 {
-	unsigned int convert = 0, bit = 1;
+	unsigned int convert = 0;
+	unsigned int pwr = 1;
 	int lng;
 
 	if (b == NULL)
 		return (0);
 
-	for (lng = 0; b[lng] != '\0'; lng++)
+	for (lng = 0; b[lng];)
+		lng++;
+
+	for (lng -= 1; lng >= 0; lng--)
 	{
-		if (b[lng] == '1')
-		{
-			convert += bit;
-		}
-		else if (b[lng] != '0')
-		{
+		if (b[lng] != '0' && b[lng] != '1')
 			return (0);
-		}
-		bit <<= 1;
+
+		convert += (b[lng] - '0') * pwr;
+		pwr *= 2;
 	}
 
 	return (convert);
