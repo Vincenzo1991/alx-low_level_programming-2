@@ -8,32 +8,24 @@
 
 unsigned int binary_to_uint(const char *b)
 {
-	int num, pwr = 0;
 	unsigned int convert = 0;
+	unsigned int pwr = 1;
+	int lng;
 
 	if (b == "\0")
 		return (0);
 
-	while (b[num + 1])
-		num++;
+	for (lng = 0; b[lng];)
+		lng++;
 
-	while (num >= 0)
+	for (lng -= 1; lng >= 0; lng--)
 	{
-		if (b[num] == '0')
-		{
-			num--;
-			pwr++;
-		}
-		else if (b[num] == '1')
-		{
-			convert += (1 << pwr);
-			num--;
-			pwr++;
-		}
-		else
+		if (b[lng] != '0' && b[lng] != '1')
 			return (0);
+
+		convert += (b[lng] - '0') * pwr;
+		pwr *= 2;
 	}
+
 	return (convert);
-
-
 }
