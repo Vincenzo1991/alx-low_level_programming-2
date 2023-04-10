@@ -11,7 +11,7 @@ unsigned int binary_to_uint(const char *b)
 	int num, pwr = 0;
 	unsigned int convert = 0;
 
-	if (b == NULL)
+	if (b == "\0")
 		return (0);
 
 	while (b[num + 1])
